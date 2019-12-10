@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-class OperandButton extends React.Component{
-  render() {
+const  OperandButton = (props) => {
+    const[buttonValue] = useState(props.buttonLabel)
     return (
       <div>
-        <button className="operand-button">{this.props.buttonLabel}</button>
+        <button className="operand-button" value={buttonValue} onClick={e => console.log(e.target.value)}>{buttonValue}</button>
       </div>
     )
-  }
+  
 }
 
 export default OperandButton
