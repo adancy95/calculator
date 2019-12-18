@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-
-import UserInput from './Components/UserInput'
+import Display from './Components/Display';
 
 function App() {
   return (
     <div className="App">
       <h1>Calculator</h1>
       <div>Output</div>
-      <div><UserInput/></div>
+      <div><Display/></div>
       
     </div>
   );
