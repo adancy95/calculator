@@ -5,7 +5,8 @@ class Display extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      display: ""
+      display: "",
+      output: 0,
     }
     this.handleDisplayInput = this.handleDisplayInput.bind(this)
   }
@@ -14,9 +15,18 @@ class Display extends React.Component{
     this.setState({ display: this.state.display+buttonLabel })
     console.log(this.state)
   }
+
+  handleEqual = (buttonLabel) => {
+    let total = eval(this.state.display)
+    this.setState({output: total })
+  }
   render() {
     return (
       <div>
+        <div>
+          Output
+          <input type="number" readOnly value={this.state.output}/>
+        </div>
         Input
         <input type="text" readOnly value={this.state.display}/>
         <div>
@@ -48,7 +58,7 @@ class Display extends React.Component{
         Row 5
         <OperandButton buttonLabel="0" setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="." setButtonValue={this.handleDisplayInput} />
-        <OperandButton buttonLabel="=" setButtonValue={this.handleDisplayInput}/>
+        <OperandButton buttonLabel="=" setButtonValue={this.handleEqual}/>
 
     
      
