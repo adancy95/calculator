@@ -16,9 +16,16 @@ class Display extends React.Component{
     console.log(this.state)
   }
 
-  handleEqual = (buttonLabel) => {
+  handleEqual = () => {
     let total = eval(this.state.display)
     this.setState({output: total })
+  }
+
+  handleClear = () => {
+    this.setState({
+      display: "",
+      output: 0
+    })
   }
   render() {
     return (
@@ -31,7 +38,7 @@ class Display extends React.Component{
         <input type="text" readOnly value={this.state.display}/>
         <div>
         Row 1
-        <OperandButton buttonLabel="C" setButtonValue={this.handleDisplayInput} />
+        <OperandButton buttonLabel="C" setButtonValue={this.handleClear} />
         <OperandButton buttonLabel="±" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel="%" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel="/" setButtonValue={this.handleDisplayInput}/>
