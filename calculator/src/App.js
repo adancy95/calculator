@@ -5,8 +5,7 @@ import Display from './Components/Display';
 function App() {
   return (
     <div className="App">
-      <h1>Calculator</h1>
-      <div>Output</div>
+        <h1>Calculator</h1>
       <div><Display/></div>
       
     </div>

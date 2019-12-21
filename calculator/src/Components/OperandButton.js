@@ -14,7 +14,7 @@ class OperandButton extends React.Component{
   render() {
     return (
       <div>
-        <button className="operand-button" value={this.props.buttonLabel} onClick={this.handleChange}>{this.props.buttonLabel}</button>
+        <button className="operand-btn" value={this.props.buttonLabel} onClick={this.handleChange}>{this.props.buttonLabel}</button>
       </div>
     )
   }

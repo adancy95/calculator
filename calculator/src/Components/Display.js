@@ -1,5 +1,6 @@
 import React from 'react'
 import OperandButton from './OperandButton'
+import '../App.css';
 
 class Display extends React.Component{
   constructor(props) {
@@ -29,40 +30,39 @@ class Display extends React.Component{
   }
   render() {
     return (
-      <div>
-        <div>
-          Output
-          <input type="number" readOnly value={this.state.output}/>
+      <div className="calculator">
+      
+        <div className="display">
+          <input className="display-text" type="number" readOnly value={this.state.output} />
+          <hr/>
+          <input className="display-text" type="text" readOnly value={this.state.display}/>
         </div>
-        Input
-        <input type="text" readOnly value={this.state.display}/>
-        <div>
-        Row 1
+   
+        <div className="button-row">
         <OperandButton buttonLabel="C" setButtonValue={this.handleClear} />
         <OperandButton buttonLabel="±" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel="%" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel="/" setButtonValue={this.handleDisplayInput}/>
       </div>
-      <div>Row 2
+      <div className="button-row">
         <OperandButton buttonLabel="7" setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="8" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel="9" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel = "*" setButtonValue={this.handleDisplayInput}/>
       </div>
-      <div>Row 3
+      <div className="button-row">
         <OperandButton buttonLabel="4" setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="5" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel="6" setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="-" setButtonValue={this.handleDisplayInput}/>
       </div>
-      <div>Row 4
+      <div className="button-row">
         <OperandButton buttonLabel="1" setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="2" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel="3" setButtonValue={this.handleDisplayInput}/>
         <OperandButton buttonLabel="+" setButtonValue={this.handleDisplayInput}/>
       </div>
-      <div>
-        Row 5
+      <div className="button-row">
         <OperandButton buttonLabel="0" setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="." setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="=" setButtonValue={this.handleEqual}/>
