@@ -12,8 +12,9 @@ class Display extends React.Component{
     this.handleDisplayInput = this.handleDisplayInput.bind(this)
   }
   handleDisplayInput = (buttonLabel) => {
+    buttonLabel === "%" ? this.setState({ display: this.state.display+ "/100"}) : this.setState({ display: this.state.display+buttonLabel })
     console.log(buttonLabel)
-    this.setState({ display: this.state.display+buttonLabel })
+    // this.setState({ display: this.state.display+buttonLabel })
     console.log(this.state)
   }
 
