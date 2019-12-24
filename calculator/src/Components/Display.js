@@ -32,7 +32,6 @@ class Display extends React.Component{
   render() {
     return (
       <div className="calculator">
-      
         <div className="display">
           <input className="display-text" type="number" readOnly value={this.state.output} />
           <hr/>
@@ -40,9 +39,8 @@ class Display extends React.Component{
         </div>
    
         <div className="button-row">
-        <OperandButton buttonLabel="C" setButtonValue={this.handleClear} />
-        <OperandButton buttonLabel="±" setButtonValue={this.handleDisplayInput}/>
-        <OperandButton buttonLabel="%" setButtonValue={this.handleDisplayInput}/>
+        <OperandButton buttonLabel="C" btnClass="equal-btn" setButtonValue={this.handleClear} />
+        <OperandButton buttonLabel="%" setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="/" setButtonValue={this.handleDisplayInput}/>
       </div>
       <div className="button-row">
@@ -66,7 +64,7 @@ class Display extends React.Component{
       <div className="button-row">
         <OperandButton buttonLabel="0" setButtonValue={this.handleDisplayInput} />
         <OperandButton buttonLabel="." setButtonValue={this.handleDisplayInput} />
-        <OperandButton buttonLabel="=" setButtonValue={this.handleEqual}/>
+        <OperandButton buttonLabel="=" btnClass="equal-btn" setButtonValue={this.handleEqual}/>
 
     
      
